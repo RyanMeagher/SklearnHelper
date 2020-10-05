@@ -1,3 +1,5 @@
+import copy
+
 from sklearn.compose import ColumnTransformer
 from sklearn.decomposition import PCA
 from sklearn.impute import SimpleImputer
@@ -31,20 +33,15 @@ scaling_names = [
 zip_scaling = zip(scaling_names, scalings)
 
 
-# my_model = PCA(n_components=0.99, svd_solver='full')
 
-
-def preprocess(X_train, X_test, zip_scaling, pca=0, special_indices1=None, special_indices2=None):
-    X_train, X_test = pd.DataFrame(X_train), pd.DataFrame(X_test)
+def preprocess(X_train, X_test, pca=0, num_imputer='median', cat_imputer='missing',special_indices1=None,
+               special_indices2=None):
     '''
     :param X_train: dtype = pd.DataFrame Dataset which is being used this does not include the label being classified
 
     :param pca: if you want to apply pca to numerical columns then set pca to a number in the range of [0,1]
                 the number will represent the the prinicple components needed to  hit the user
                 specified explained variance contribution
-
-    :param zip_scaling: This is a dataset that you pass in to transform the numerical columns
-                        ex. zip_scaling= [("Standard Scaler",StandardScalar(), ("MinMax Scaler", MinMaxScalar()]
 
     :param special_indices1: user defined indexes of columns in df they want to apply a specific pipeline to
                             special_indecies1= (column_list , pipe)
@@ -53,8 +50,9 @@ def preprocess(X_train, X_test, zip_scaling, pca=0, special_indices1=None, speci
 
     :return: A dictionary is returned of d[scaling_name] = (X_processed , pipe)
     '''
-
     X_processed_dict = {}
+    X_train, X_test = pd.DataFrame(X_train), pd.DataFrame(X_test)
+    classGrid=copy.deepcopy(zip_scaling)
     # Find the index of the columns in a df with numerical attributes
 
     num_indices = [key for key in dict(X_train.dtypes)
@@ -65,12 +63,12 @@ def preprocess(X_train, X_test, zip_scaling, pca=0, special_indices1=None, speci
     cat_indices = [key for key in dict(X_train.dtypes)
                    if dict(X_train.dtypes)[key] in ['object']]  # Categorical Varibles
 
-    for n, c in zip_scaling:
+    for n, c in classGrid:
         # create a pipe to scale/transform numerical data and catagorical data in different ways
         # to create various datasets from one dataset
 
         numeric_transformer = Pipeline(steps=[
-            ('imputer', SimpleImputer(strategy='median')),
+            ('imputer', SimpleImputer(strategy=num_imputer)),
             ('n', c)
         ])
 
@@ -80,7 +78,7 @@ def preprocess(X_train, X_test, zip_scaling, pca=0, special_indices1=None, speci
             numeric_transformer.steps.append(['PCA', PCA(n_components=pca, svd_solver='full')])
 
         categorical_transformer = Pipeline(steps=[
-            ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
+            ('imputer', SimpleImputer(strategy='constant', fill_value=cat_imputer)),
             ('Label Binarizer', LabelBinarizer())
         ])
 
@@ -114,7 +112,7 @@ def preprocess(X_train, X_test, zip_scaling, pca=0, special_indices1=None, speci
             # fit transfrom
             X_processed = preprocess_model.fit_transform(X_train)
             X_test_processed = preprocess_model.transform(X_test)
-            X_processed_dict[n] = [X_processed, X_test_processed, preprocess_model, n]
+            X_processed_dict[n] = [X_processed, X_test_processed, preprocess_model]
 
         else:
             # create the column transformer with the pipeline steps created above to be performed
@@ -126,10 +124,10 @@ def preprocess(X_train, X_test, zip_scaling, pca=0, special_indices1=None, speci
                 ])
 
             X_processed = preprocess_model.fit_transform(X_train)
-            print(pd.DataFrame(X_processed).shape)
             X_test_processed = preprocess_model.transform(X_test)
-            X_processed_dict[n] = [X_processed, X_test_processed, preprocess_model, n]
-            print(f"new df was created using the {n}")
+            X_processed_dict[n] = [X_processed, X_test_processed, preprocess_model]
+            print(f"new df was created using the {n} and has a shape")
+            print(pd.DataFrame(X_processed).shape)
 
             # print(f'Processed X with shape = {pd.DataFrame(X_processed).shape}  and dtype = {type(X_processed)}')
             # print(pd.DataFrame(X_processed).shape)

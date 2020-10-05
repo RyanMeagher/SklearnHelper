@@ -19,21 +19,24 @@ y = X.pop('label')
 col_names = X.columns
 
 
-def processClassify(X_train, X_test, y_train, y_test, pca_contribution=[0.20, 0.5, .90]):
+def processClassify(X_train, X_test, y_train, y_test,
+                    pca_contribution=[0]):
     processClassifyDict = {}
-    X_dict = preprocess(X_train, X_test, zip_scaling, pca=0.85)
 
-    for k, v in X_dict.items():
-        print(k)
-        print(pd.DataFrame(v[0]).shape)
-        print(pd.DataFrame(v[1]).shape)
+    for pca_param in pca_contribution:
 
-        processClassifyDict[k] = fit_classifier_default(v[0], v[1], y_train, y_test)
+        X_dict = preprocess(X_train, X_test, pca_param)
+
+        for k, v in X_dict.items():
+            print(f'{k} with {str(pca_param)} pca contribution is about to begin classification')
+            print(f'X_train shape= {pd.DataFrame(v[0]).shape}')
+            print(f'X_train shape= {pd.DataFrame(v[1]).shape}')
+
+            processClassifyDict[f'{k} {str(pca_param)}'] = fit_classifier_default(v[0], v[1], y_train, y_test)
     return processClassifyDict
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
 
-models = processClassify(X_train, X_test, y_train, y_test)
-
-
+models1 = processClassify(X_train, X_test, y_train, y_test,
+                          pca_contribution=[0,0.90])

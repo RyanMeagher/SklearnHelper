@@ -47,7 +47,8 @@ def fit_classifier_default(X_train, X_test, y_train, y_test):
         classification_model = pipe.fit(X_train, y_train)
         y_pred = classification_model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
-        modelDict[n] = (classification_model, y_pred, accuracy)
+        modelDict[n] = [classification_model, y_pred, accuracy]
+
         print(f"{n}  accuracy score on x_test: {accuracy * 100:.2f}%")
 
     return modelDict
@@ -76,6 +77,6 @@ def fit_classifier_gridSearch(X_train, X_test, y_train, y_test, num_cross_val=2)
         print("accuracy score: {0:.2f}%".format(accuracy * 100))
 
         # add the best parameters found via GridSearchCV and also the
-        modelDict[n] = (classification_model, y_pred, accuracy)
+        modelDict[n] = [classification_model, y_pred, accuracy]
 
     return modelDict

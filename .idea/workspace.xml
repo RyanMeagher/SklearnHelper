@@ -1,9 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bf5e159d-169f-4c61-a4f6-b87f292e2327" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ML.py" beforeDir="false" afterPath="$PROJECT_DIR$/ML.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/Preprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SkLearnHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/SkLearnHelper.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1iTHTP4AOvVsdiswLySQRiVWNvY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ML" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SklearnHelper" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.ML" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf5e159d-169f-4c61-a4f6-b87f292e2327" name="Default Changelist" comment="" />
+      <created>1601924668110</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601924668110</updated>
+      <workItem from="1601924669485" duration="4635000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="791" height="135" key="GridCell.Tab.0.bottom" timestamp="1601940826868">
+      <screen x="667" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="791" height="135" key="GridCell.Tab.0.bottom/667.-1057.1920.1057/0.23.1440.832/-1253.-1057.1920.1057@667.-1057.1920.1057" timestamp="1601940826868" />
+    <state width="791" height="135" key="GridCell.Tab.0.center" timestamp="1601940826866">
+      <screen x="667" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="791" height="135" key="GridCell.Tab.0.center/667.-1057.1920.1057/0.23.1440.832/-1253.-1057.1920.1057@667.-1057.1920.1057" timestamp="1601940826866" />
+    <state width="791" height="135" key="GridCell.Tab.0.left" timestamp="1601940826866">
+      <screen x="667" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="791" height="135" key="GridCell.Tab.0.left/667.-1057.1920.1057/0.23.1440.832/-1253.-1057.1920.1057@667.-1057.1920.1057" timestamp="1601940826866" />
+    <state width="791" height="135" key="GridCell.Tab.0.right" timestamp="1601940826867">
+      <screen x="667" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="791" height="135" key="GridCell.Tab.0.right/667.-1057.1920.1057/0.23.1440.832/-1253.-1057.1920.1057@667.-1057.1920.1057" timestamp="1601940826867" />
+    <state x="-1017" y="-1024" width="865" height="825" key="dock-window-1" timestamp="1601938075389">
+      <screen x="-1253" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="-1017" y="-1024" width="865" height="825" key="dock-window-1/667.-1057.1920.1057/0.23.1440.832/-1253.-1057.1920.1057@667.-1057.1920.1057" timestamp="1601938075389" />
+    <state x="-321" y="-962" width="786" height="922" key="dock-window-2" timestamp="1601940587214">
+      <screen x="-1253" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="-321" y="-962" width="786" height="922" key="dock-window-2/667.-1057.1920.1057/0.23.1440.832/-1253.-1057.1920.1057@667.-1057.1920.1057" timestamp="1601940587214" />
+    <state x="472" y="23" width="914" height="831" key="dock-window-3" timestamp="1601938850305">
+      <screen x="0" y="23" width="1440" height="832" />
+    </state>
+    <state x="472" y="23" width="914" height="831" key="dock-window-3/667.-1057.1920.1057/0.23.1440.832/-1253.-1057.1920.1057@667.-1057.1920.1057" timestamp="1601938850305" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SklearnHelper$ML.coverage" NAME="ML Coverage Results" MODIFIED="1601940826857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
